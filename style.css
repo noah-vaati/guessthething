@@ -33,20 +33,21 @@ body {
   button{
     border: 5px solid #314257;
     background-color: #455d7a;
-    padding: 10px;
-    border-radius: 20px;
+    padding: 5px;
+    border-radius: 5px;
     color: #e3e3e3;
   }
 
   button:hover{
     border: 5px solid #314257;
     background-color: #314257;
-    padding: 10px;
-    border-radius: 20px;
+    padding: 5px;
+    border-radius: 5px;
     color: #e3e3e3;
   }
 
   h1 {
     font-size: 5vh;
+    text-align: center;
   }
   
