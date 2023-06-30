@@ -7,12 +7,12 @@ body {
   }
 
   .title{
-    border: 20px solid #314257;
+    border: 5px solid #314257;
     background-color: #455d7a;
     padding: 0px;
     padding-left: 30px;
     text-align: left;
-    border-radius: 60px;
+    border-radius: 20px;
     
   }
 
@@ -30,20 +30,33 @@ body {
     border-radius: 30px;
   }
 
+  .center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40vw;
+  }
+
   button{
-    border: 5px solid #314257;
+    border: 1px solid #314257;
     background-color: #455d7a;
+    padding: 5px;
+    border-radius: 5px;
+    color: #e3e3e3;
+    margin: 5px;
+    font-size: 3vh;
+  }
+
+  button:hover{
+    border: 1px solid #314257;
+    background-color: #314257;
     padding: 5px;
     border-radius: 5px;
     color: #e3e3e3;
   }
 
-  button:hover{
-    border: 5px solid #314257;
-    background-color: #314257;
-    padding: 5px;
-    border-radius: 5px;
-    color: #e3e3e3;
+  .btn_submit{
+    width: 10vw;
   }
 
   h1 {
@@ -51,3 +64,16 @@ body {
     text-align: center;
   }
   
+  img{
+    height: 60vh;
+  }
+
+  div{
+    display: flex;
+    justify-content: center;
+  }
+
+  input{
+    border-radius: 5px;
+    font-size: 3vh;
+  }
