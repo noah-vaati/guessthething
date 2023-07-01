@@ -27,18 +27,23 @@
         <button id="btn3" onclick="changeImage(getImagePath(3))">4</button>
         <button id="btn4" onclick="changeImage(getImagePath(4))">5</button>
         
-        <button onclick="skip()">Skip &#x23ED</button>
+        <button id="btnSkip" onclick="skip()">Skip &#x23ED</button>
     </div>
 
     <br>
 
     <div>
-        <input type="text" placeholder="Search for a thing...">
+        <input id="input0" type="text" placeholder="Search for a thing...">
     </div>
 
     <div>
-        <button class="btn_submit">Submit</button>
+        <button id="btnSubmit" onclick="submitAnswer()">Submit</button>
     </div>
+
+    <p class="center" id="prevGuesses">
+        Previous Guesses:
+
+    </p>
 
 
 </body>

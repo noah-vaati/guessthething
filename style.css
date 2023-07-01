@@ -60,9 +60,6 @@ body {
     color: #e3e3e3;
   }
 
-  .btn_submit{
-    width: 20vw;
-  }
 
   :disabled{
     cursor: no-drop;
@@ -87,4 +84,8 @@ body {
     width: 20vw;
     border-radius: 5px;
     font-size: 3vh;
+  }
+
+  p{
+    text-align: center;
   }
