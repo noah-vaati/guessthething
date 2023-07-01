@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body onload="changeImage(getFirstImage())">
+<body onload="changeImage(getImagePath(0)); newImageSet()">
     <script src="main.js"></script>
 
     <h1 class="title">GuessTheThing</h1>
@@ -21,11 +21,11 @@
     <br>
 
     <div>
-        <button>1</button>
-        <button disabled>2</button>
-        <button disabled>3</button>
-        <button disabled>4</button>
-        <button disabled>5</button>
+        <button id="btn0" onclick="changeImage(getImagePath(0))">1</button>
+        <button id="btn1" onclick="changeImage(getImagePath(1))">2</button>
+        <button id="btn2" onclick="changeImage(getImagePath(2))">3</button>
+        <button id="btn3" onclick="changeImage(getImagePath(3))">4</button>
+        <button id="btn4" onclick="changeImage(getImagePath(4))">5</button>
         
         <button onclick="skip()">Skip &#x23ED</button>
     </div>
