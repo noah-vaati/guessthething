@@ -9,13 +9,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body onload="changeImage(getFirstImage())">
     <script src="main.js"></script>
 
     <h1 class="title">GuessTheThing</h1>
 
     <div>
-        <img src="images/test0/beach0.jpg" alt="There should be a picture here" class="center" name="imageView">
+        <img src=images/test1/0.jpg alt="There should be a picture here" class="center" name="imageView">
     </div>
 
     <br>
@@ -27,7 +27,7 @@
         <button disabled>4</button>
         <button disabled>5</button>
         
-        <button onclick="toggleImage()">Skip &#x23ED</button>
+        <button onclick="skip()">Skip &#x23ED</button>
     </div>
 
     <br>
