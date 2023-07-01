@@ -45,9 +45,14 @@ body {
     color: #e3e3e3;
     margin: 5px;
     font-size: 3vh;
+    
   }
 
-  button:hover{
+  button:not(:disabled){
+    cursor: pointer;
+  }
+
+  button:hover, button:disabled{
     border: 1px solid #314257;
     background-color: #314257;
     padding: 5px;
@@ -56,7 +61,11 @@ body {
   }
 
   .btn_submit{
-    width: 10vw;
+    width: 20vw;
+  }
+
+  :disabled{
+    cursor: no-drop;
   }
 
   h1 {
@@ -74,6 +83,7 @@ body {
   }
 
   input{
+    width: 20vw;
     border-radius: 5px;
     font-size: 3vh;
   }
