@@ -65,13 +65,17 @@ function submitAnswer(){
     }else{
         //wrong answer
         
+        //show previus guesses if hidden
+        document.getElementById("prevGuesses").hidden = false;
+        document.getElementById("guessesBanner").hidden = false;
+
         //reuse skip code
         skip();
 
         //apend br and guess to prevGuesses
-        node = document.createElement("br");
-        document.getElementById("prevGuesses").appendChild(node);
         node = document.createTextNode(guess);
+        document.getElementById("prevGuesses").appendChild(node);
+        node = document.createElement("br");
         document.getElementById("prevGuesses").appendChild(node);
 
         
