@@ -94,8 +94,8 @@ body {
     text-align: center;
   }
 
-  #prevGuesses, #guessesBanner{
+  #prevGuesses{
     width: 20vw;    
-    border: 1px solid #f95959;
+    border: 2px solid #f95959;
     border-radius: 5px;
   }
