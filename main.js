@@ -10,7 +10,7 @@ imageExt = ".jpg";
 
 //answer
 //TODO: make this less static
-answer = "beach"
+answer = "Beach"
 
 //gets file path syntax based off of image folder 
 function getImagePath(index){
@@ -47,9 +47,8 @@ function skip(){
         nextImage();
         toggleBtnDisable(imageIndex);
     }else if(imageIndex+1>=maxImageIndex){
-        console.log("Out of guesses");
-        document.getElementById("btnSubmit").disabled = true;
-        document.getElementById("btnSkip").hidden = true;
+        //out of guesses
+        endGame(false);
     }
 }
 
@@ -59,14 +58,13 @@ function submitAnswer(){
     //gets value from input, then cears it
     guess = document.getElementById("input0").value;
     document.getElementById("input0").value = null;
-    if(guess == answer){
-        //correct answer
-        console.log("Success");
-        
-        document.getElementById("btnSubmit").disabled = true;
+    if(guess.toLowerCase() == answer.toLowerCase()){
+        //correct answer        
+        endGame(true);
+
     }else{
         //wrong answer
-        console.log(imageIndex);
+        
         //reuse skip code
         skip();
 
@@ -87,4 +85,31 @@ function nextImage(){
     imageIndex++;
     changeImage(getImagePath(imageIndex));
     //check if max guesses
+}
+
+//does stuff that should happen at the end of the game
+//gameWon would be true if the game was won
+function endGame(gameWon){
+    //enable all of the picture buttons if they aren't already
+    for(i = imageIndex+1; i < maxImageIndex; i++){
+        toggleBtnDisable(i);
+    }
+
+    //hide the submit and skip buttons
+    document.getElementById("btnSubmit").hidden = true;
+    document.getElementById("btnSkip").hidden = true;
+    document.getElementById("input0").hidden = true;
+
+    document.getElementById("answerBanner").hidden = false;
+    document.getElementById("answerBanner").textContent = "The correct answer is: " + answer;
+
+    if(gameWon){
+        //show congratulations message, along with correct answer
+        document.getElementById("resultBanner").hidden = false;
+        document.getElementById("resultBanner").textContent = "Congratulations!"
+
+    }else{
+        document.getElementById("resultBanner").hidden = false;
+        document.getElementById("resultBanner").textContent = "Better luck next time!"
+    }
 }
