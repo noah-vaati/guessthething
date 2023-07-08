@@ -111,10 +111,13 @@ function endGame(gameWon){
         toggleBtnDisable(i);
     }
 
-    //hide the submit and skip buttons
+    //hide the input, submit, and skip buttons
     document.getElementById("btnSubmit").hidden = true;
     document.getElementById("btnSkip").hidden = true;
     document.getElementById("input0").hidden = true;
+
+    //show replay button
+    document.getElementById("btnReplay").hidden = false;
 
     document.getElementById("answerBanner").hidden = false;
     document.getElementById("answerBanner").textContent = "The correct answer is: " + answer;

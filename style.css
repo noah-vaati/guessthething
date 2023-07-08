@@ -61,7 +61,7 @@ body {
     color: #e3e3e3;
   }
 
-  #btnSubmit{
+  #btnSubmit, #btnReplay{
     width: 20vw;
   }
 
