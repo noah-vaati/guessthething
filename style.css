@@ -99,3 +99,8 @@ body {
     border: 2px solid #f95959;
     border-radius: 5px;
   }
+
+  a{
+    color: #e3e3e3;
+    text-decoration: none;
+  }
