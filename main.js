@@ -3,8 +3,7 @@ imageIndex = 0;
 //max index for value above, should be 5
 maxImageIndex = 5;
 //what folder are we in? should default to most recent
-//TODO: automate this when picture changes
-imageFolder = "images/test1/";
+let imageFolder;
 //image extension, jpg for now
 imageExt = ".jpg";
 
