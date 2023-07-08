@@ -12,6 +12,19 @@ imageExt = ".jpg";
 //TODO: make this less static
 answer = "Beach"
 
+//do a quick check for sessionStorage values
+if(sessionStorage.getItem('imageFolder') == null){
+    sessionDefault()
+}
+
+imageFolder = sessionStorage.getItem('imageFolder');
+
+//sets default sessionStorage values
+function sessionDefault(){
+    sessionStorage.setItem('imageFolder','images/test1/');
+    
+}
+
 //gets file path syntax based off of image folder 
 function getImagePath(index){
     return imageFolder + index + imageExt
