@@ -6,21 +6,25 @@ maxImageIndex = 5;
 let imageFolder;
 //image extension, jpg for now
 imageExt = ".jpg";
-
+//url
+url = "https://www.whichbarbie.com/";
 //answer
 let answer;
-answer = "x"
-
-$.get("https://www.whichbarbie.com/images/test2/answer.json", function(data, status){
-    alert("Data: " + data + "\nStatus: " + status);
-  });
 
 //do a quick check for sessionStorage values
 if(sessionStorage.getItem('imageFolder') == null){
     sessionDefault()
 }
 
+//set image folder
 imageFolder = sessionStorage.getItem('imageFolder');
+
+//find answer
+//note, requires web server
+$.get(url+imageFolder+"answer.json", function(data, status){
+    console.log(status);
+    answer = data.answer;
+  });
 
 //sets default sessionStorage values
 function sessionDefault(){
