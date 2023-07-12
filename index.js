@@ -6,7 +6,7 @@ url = "https://www.whichbarbie.com/";
 //may think about it
 function newImage(folderPath){
     sessionStorage.setItem('imageFolder', folderPath)
-    window.location.replace("main.html");
+    window.location.replace(url);
 }
 
 //load the most recent image
