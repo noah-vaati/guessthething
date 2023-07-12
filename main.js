@@ -22,13 +22,18 @@ imageFolder = sessionStorage.getItem('imageFolder');
 //find answer
 //note, requires web server
 $.get(url+imageFolder+"answer.json", function(data, status){
-    console.log(status);
     answer = data.answer;
   });
 
 //sets default sessionStorage values
 function sessionDefault(){
-    sessionStorage.setItem('imageFolder','images/test1/');
+    let path;
+    //get from json file
+    //note, requires web server
+    $.get(url+"mostRecent.json", function(data, status){
+        path = data.mostRecent;
+    });
+    sessionStorage.setItem('imageFolder',path);
     
 }
 
