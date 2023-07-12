@@ -11,19 +11,21 @@ url = "https://www.whichbarbie.com/";
 //answer
 let answer;
 
-//do a quick check for sessionStorage values
-if(sessionStorage.getItem('imageFolder') == null){
-    sessionDefault()
+
+
+
+//initializes the page
+function initPage(){
+    //do a quick check for sessionStorage values
+    if(sessionStorage.length == 0){
+        sessionDefault()
+    }else{
+        setValues();
+        
+        changeImage(getImagePath(0));
+    }
+    newImageSet()
 }
-
-//set image folder
-imageFolder = sessionStorage.getItem('imageFolder');
-
-//find answer
-//note, requires web server
-$.get(url+imageFolder+"answer.json", function(data, status){
-    answer = data.answer;
-  });
 
 //sets default sessionStorage values
 function sessionDefault(){
@@ -32,9 +34,24 @@ function sessionDefault(){
     //note, requires web server
     $.get(url+"mostRecent.json", function(data, status){
         path = data.mostRecent;
+        sessionStorage.setItem('imageFolder',path);
+        setValues();
+        
+        changeImage(getImagePath(0));
     });
-    sessionStorage.setItem('imageFolder',path);
     
+}
+
+//sets values for answer and image folder
+function setValues(){
+    //set image folder
+    imageFolder = sessionStorage.getItem('imageFolder');
+
+    //find answer
+    //note, requires web server
+    $.get(url+imageFolder+"answer.json", function(data, status){
+        answer = data.answer;
+    });
 }
 
 //gets file path syntax based off of image folder 
