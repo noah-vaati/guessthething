@@ -8,8 +8,12 @@ let imageFolder;
 imageExt = ".jpg";
 
 //answer
-//TODO: make this less static
-answer = "Beach"
+let answer;
+answer = "x"
+
+$.get("https://www.whichbarbie.com/images/test2/answer.json", function(data, status){
+    alert("Data: " + data + "\nStatus: " + status);
+  });
 
 //do a quick check for sessionStorage values
 if(sessionStorage.getItem('imageFolder') == null){
