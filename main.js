@@ -12,8 +12,6 @@ url = "https://www.whichbarbie.com/";
 mainJSON = 'main.json';
 //answer
 let answer;
-//autocomplete possible answers, array
-let pAnswers;
 
 
 
@@ -28,22 +26,34 @@ function initPage(){
         
         changeImage(getImagePath(0));
     }
-    newImageSet()
+    newImageSet();
+    initAutocomplete();
 }
 
 //sets default sessionStorage values
 function sessionDefault(){
     let path;
-    //get from json file
+    //get most recent and possible answers from json file
     //note, requires web server
     $.get(url+mainJSON, function(data, status){
         path = data.mostRecent;
+
         sessionStorage.setItem('imageFolder',path);
         setValues();
         
         changeImage(getImagePath(0));
+
     });
     
+}
+
+//sets up autocomplete on input box
+function initAutocomplete(){
+    $.get(url+mainJSON, function(data, status){
+        $('#input0').autocomplete({
+            source: data.pAnswers
+        });
+    })
 }
 
 //sets values for answer and image folder
@@ -96,11 +106,6 @@ function skip(){
         //out of guesses
         endGame(false);
     }
-}
-
-//handles the autocomplete in the input  form
-function autoComp(){
-
 }
 
 //submit answer, check if correct
