@@ -8,8 +8,12 @@ let imageFolder;
 imageExt = ".jpg";
 //url
 url = "https://www.whichbarbie.com/";
+//file name for main json file
+mainJSON = 'main.json';
 //answer
 let answer;
+//autocomplete possible answers, array
+let pAnswers;
 
 
 
@@ -32,7 +36,7 @@ function sessionDefault(){
     let path;
     //get from json file
     //note, requires web server
-    $.get(url+"mostRecent.json", function(data, status){
+    $.get(url+mainJSON, function(data, status){
         path = data.mostRecent;
         sessionStorage.setItem('imageFolder',path);
         setValues();
@@ -92,6 +96,11 @@ function skip(){
         //out of guesses
         endGame(false);
     }
+}
+
+//handles the autocomplete in the input  form
+function autoComp(){
+
 }
 
 //submit answer, check if correct
