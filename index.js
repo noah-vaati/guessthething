@@ -1,5 +1,5 @@
 //url
-url = "https://www.whichbarbie.com/";
+url = "https://www.yoururlhere.com";
 
 //launch new image
 //currently use hard coded paths in the html, not sure there is a better way, 
