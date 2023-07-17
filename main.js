@@ -197,6 +197,26 @@ function restoreGame(){
     //iterate game through as many guesses as there were
     for(i = 0; i < rGuesses; i++){
         skip();
+        console.log("rSkip")
+    }
+
+    //trigger win/loss if applicable
+    if(rWon){
+        //if game was won
+
+        //find answer
+        //note, requires web server
+        $.get(url+imageFolder+"answer.json", function(data, status){
+            answer = data.answer;
+            endGame(true);
+        });
+        
+    }else if(rGuesses==-1){
+        //if game was lost
+        $.get(url+imageFolder+"answer.json", function(data, status){
+            answer = data.answer;
+            endGame(false);
+        });
     }
 
 }
