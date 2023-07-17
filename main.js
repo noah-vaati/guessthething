@@ -28,6 +28,10 @@ function initPage(){
     }
     newImageSet();
     initAutocomplete();
+
+    if(localStorage.getItem(imageFolder+"guesses")!=null){
+        restoreGame();
+    }
 }
 
 //sets default sessionStorage values
@@ -171,6 +175,8 @@ function endGame(gameWon){
     if(gameWon){
         //add guess to localStorage
         localStorage.setItem(imageFolder+"guesses",imageIndex+1);
+        localStorage.setItem(imageFolder+"won",true);
+
         //show congratulations message, along with correct answer
         document.getElementById("resultBanner").hidden = false;
         document.getElementById("resultBanner").textContent = "Congratulations!"
@@ -181,4 +187,16 @@ function endGame(gameWon){
         document.getElementById("resultBanner").hidden = false;
         document.getElementById("resultBanner").textContent = "Better luck next time!"
     }
+}
+
+//bring the gate up to the state it was last i, if there was one
+function restoreGame(){
+    rGuesses = localStorage.getItem(imageFolder+"guesses");
+    rWon = localStorage.getItem(imageFolder+"won");
+
+    //iterate game through as many guesses as there were
+    for(i = 0; i < rGuesses; i++){
+        skip();
+    }
+
 }
