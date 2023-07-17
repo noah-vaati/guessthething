@@ -7,7 +7,7 @@ let imageFolder;
 //image extension, jpg for now
 imageExt = ".jpg";
 //url
-url = "https://www.yoururlhere.com/";
+url = "https://www.whichbarbie.com/";
 //file name for main json file
 mainJSON = 'main.json';
 //answer
@@ -143,6 +143,8 @@ function submitAnswer(){
 //calls changeImage to use next image in sequence
 function nextImage(){
     imageIndex++;
+    //add record to local storage
+    localStorage.setItem(imageFolder+"guesses",imageIndex);
     changeImage(getImagePath(imageIndex));
     //check if max guesses
 }
@@ -167,11 +169,15 @@ function endGame(gameWon){
     document.getElementById("answerBanner").textContent = "The correct answer is: " + answer;
 
     if(gameWon){
+        //add guess to localStorage
+        localStorage.setItem(imageFolder+"guesses",imageIndex+1);
         //show congratulations message, along with correct answer
         document.getElementById("resultBanner").hidden = false;
         document.getElementById("resultBanner").textContent = "Congratulations!"
 
     }else{
+        //add to local storage record that they lost
+        localStorage.setItem(imageFolder+"guesses",-1);
         document.getElementById("resultBanner").hidden = false;
         document.getElementById("resultBanner").textContent = "Better luck next time!"
     }

@@ -104,3 +104,14 @@ body {
     color: #e3e3e3;
     text-decoration: none;
   }
+
+  h3{
+    
+    border: 1px solid #314257;
+    background-color: #455d7a;
+    padding: 2px;
+    border-radius: 3px;
+    color: #e3e3e3;
+    font-size: 2vh;
+    text-align: center;
+  }

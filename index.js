@@ -1,5 +1,5 @@
 //url
-url = "https://www.yoururlhere.com";
+url = "https://www.whichbarbie.com/";
 
 //launch new image
 //currently use hard coded paths in the html, not sure there is a better way, 
@@ -13,7 +13,32 @@ function newImage(folderPath){
 function mostRecentImage(){
     //get from json file
     //note, requires web server
-    $.get(url+"mostRecent.json", function(data, status){
+    $.get(url+"main.json", function(data, status){
         newImage(data.mostRecent);
+    });
+}
+
+//checks for scores and adds them to menu
+function checkScores(){
+    //get from json file
+    //note, requires web server
+    $.get(url+"main.json", function(data, status){
+        ids = data.ids;
+        //ids should correspond to ids for buttons
+        //iterate through them
+        for(i = 0; i < ids.length; i++){
+            guesses = localStorage.getItem("images/"+ids[i]+"/guesses");
+            if(guesses==null){
+                //if they have not played yet
+                $("#"+ids[i]).hide();
+            }else if(guesses == -1){
+                //if they lost this game
+                $("#"+ids[i]).text("❌ Loss");
+            }else{
+                //if they won this game
+                $("#"+ids[i]).text("✔️ Won in " + guesses + " guesses");
+            }
+            
+        }
     });
 }

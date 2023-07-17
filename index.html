@@ -14,17 +14,25 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 
-<body>
+<body onload="checkScores()">
 
     <a href="index.html">
         <h1 class="title"> GuessTheThing</h1>
     </a>
 
-    <button onclick="mostRecentImage()">Most Recent Picture</button>
+    <div>
+        <button onclick="mostRecentImage()">Most Recent Picture</button>
+    </div>
+    
+    <div>
+        <button onclick="newImage('images/100723/')">10/07/2023</button>
+        <h3 id="100723"></h3>
+    </div>
 
-    <button onclick="newImage('images/100723/')">10/07/2023</button>
-
-    <button onclick="newImage('images/120723/')">12/07/2023</button>
+    <div>
+        <button onclick="newImage('images/120723/')">12/07/2023</button>
+        <h3 id="120723"></h3>
+    </div>
 
 </body>
 </html>
