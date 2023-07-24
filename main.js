@@ -7,7 +7,7 @@ let imageFolder;
 //image extension, jpg for now
 imageExt = ".jpg";
 //url
-url = "https://www.whichbarbie.com/";
+url = null;
 //file name for main json file
 mainJSON = 'main.json';
 //answer
